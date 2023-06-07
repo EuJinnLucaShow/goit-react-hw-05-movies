@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import {
-  BrowserRouter as Router,
-  Switch,
+  BrowserRouter as Router,  
   Route,
   Redirect,
 } from 'react-router-dom';
@@ -15,15 +14,13 @@ const Reviews = React.lazy(() => import('./Reviews/Reviews'));
 function App() {
   return (
     <Router>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Switch>
+      <Suspense fallback={<div>Loading...</div>}>       
           <Route exact path="/" component={Home} />
           <Route exact path="/movies" component={Movies} />
           <Route exact path="/movies/:movieId" component={MovieDetails} />
           <Route exact path="/movies/:movieId/cast" component={Cast} />
           <Route exact path="/movies/:movieId/reviews" component={Reviews} />
-          <Redirect to="/" />
-        </Switch>
+          <Redirect to="/" />        
       </Suspense>
     </Router>
   );
