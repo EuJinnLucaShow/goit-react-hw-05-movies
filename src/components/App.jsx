@@ -1,31 +1,38 @@
-import React, { Suspense } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom';
+import React from 'react';
+import { Routes, Route, NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+import Home from '../pages/Home';
+import Movies from '../pages/Movies';
+import MovieDetails from '../pages/MovieDetails';
+import Cast from '../pages/Cast';
+import Reviews from '../pages/Reviews';
 
-const Home = React.lazy(() => import('./Home/Home'));
-const Movies = React.lazy(() => import('./Movies/Movies'));
-const MovieDetails = React.lazy(() => import('./MovieDetails/MovieDetails'));
-const Cast = React.lazy(() => import('./Cast/Cast'));
-const Reviews = React.lazy(() => import('./Reviews/Reviews'));
+const StyledLink = styled(NavLink)`
+  color: black;
+
+  &.active {
+    color: orange;
+  }
+`;
 
 function App() {
   return (
-    <Router>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/movies" component={Movies} />
-          <Route exact path="/movies/:movieId" component={MovieDetails} />
-          <Route exact path="/movies/:movieId/cast" component={Cast} />
-          <Route exact path="/movies/:movieId/reviews" component={Reviews} />
-          <Redirect to="/" />
-        </Switch>
-      </Suspense>
-    </Router>
+    <div>
+      <nav>
+        <StyledLink to="/" end>
+          Home
+        </StyledLink>
+        <StyledLink to="/movies">Movies</StyledLink>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:movieId" element={<MovieDetails />} />
+        <Route path="/movies/:movieId/cast" element={<Cast />} />
+        <Route path="/movies/:movieId/reviews" element={<Reviews />} />
+      </Routes>
+    </div>
   );
 }
 
