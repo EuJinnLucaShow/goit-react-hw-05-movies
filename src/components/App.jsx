@@ -15,7 +15,7 @@ function App() {
           <span role="img" aria-label="computer icon">
             🎞️
           </span>{' '}
-          The Movie Theater
+          The Movie
         </Logo>
         <nav>
           <Link to="/" end>

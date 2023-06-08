@@ -4,7 +4,8 @@ const Movies = () => {
   return (
     <div>
       <h1>Movie Search</h1>
-      {/* Додайте код для відображення пошуку фільмів */}
+      <input type="text" debounceTimeout={500} placeholder="type here" />
+      <button>Search</button>
     </div>
   );
 };
