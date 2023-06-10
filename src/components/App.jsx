@@ -21,14 +21,14 @@ const App = () => {
           Movie Search
         </Logo>
         <nav>
-          <Link to="/" end>
+          <Link to="/Home" end>
             Home
           </Link>
           <Link to="/movies">Movie</Link>
         </nav>
       </Header>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:movieId" element={<MovieDetails />} />
         <Route path="/movies/:movieId/cast" element={<Cast />} />
