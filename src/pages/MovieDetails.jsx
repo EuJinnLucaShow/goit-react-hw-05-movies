@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, Outlet } from 'react-router-dom';
 import axios from 'axios';
+import {
+  Container,
+  Description,
+  ImageContainer,
+  Image,
+  ProdCompany,
+} from './MovieDetails.styled';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -33,29 +40,57 @@ const MovieDetails = () => {
     return <div>Loading...</div>;
   }
 
+  const productionCompaniesList = movieDetails.production_companies?.map(
+    ({ id, logo_path, name }) =>
+      logo_path && (
+        <li key={id}>
+          {logo_path && (
+            <img
+              src={`https://image.tmdb.org/t/p/w500${logo_path}`}
+              alt={name}
+              style={{ maxHeight: 50, maxWidth: 200, marginRight: 30 }}
+            />
+          )}
+        </li>
+      )
+  );
+
   // Calculate rounded popularity percentage
   const roundedPopularity = Math.round(movieDetails.vote_average * 10);
 
   return (
     <div>
-      <h1>{movieDetails.title}</h1>
-      <p>User score: {roundedPopularity}%</p>
-      <h2>Overview</h2>
-      <p>{movieDetails.overview}</p>
-      <h2>Genres</h2>
-      <p>
-        {movieDetails.genres.map(genre => (
-          <span key={genre.id}> {genre.name}</span>
-        ))}
-      </p>
-      <img
-        src={
-          movieDetails.poster_path
-            ? `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`
-            : `https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg`
-        }
-        alt={movieDetails.title}
-      />
+      <Container>
+        <Description>
+          <h1>{movieDetails.title}</h1>
+          <p>User score: {roundedPopularity}%</p>
+          <h2>Overview</h2>
+          <p>{movieDetails.overview}</p>
+          <h2>Genres</h2>
+          <p>
+            {movieDetails.genres.map(genre => (
+              <span key={genre.id}> {genre.name}</span>
+            ))}
+          </p>
+          {productionCompaniesList[0] !== null &&
+            productionCompaniesList.length > 0 && (
+              <>
+                <h2>Production companies</h2>
+                <ProdCompany>{productionCompaniesList}</ProdCompany>
+              </>
+            )}
+        </Description>
+        <ImageContainer>
+          <Image
+            src={
+              movieDetails.poster_path
+                ? `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`
+                : `https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg`
+            }
+            alt={movieDetails.title}
+          />
+        </ImageContainer>
+      </Container>
       <hr />
       <h3>Additional information</h3>
       <ul>
