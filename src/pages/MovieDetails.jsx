@@ -48,7 +48,12 @@ const MovieDetails = () => {
             <img
               src={`https://image.tmdb.org/t/p/w500${logo_path}`}
               alt={name}
-              style={{ maxHeight: 50, maxWidth: 200, marginRight: 30 }}
+              style={{
+                maxHeight: 50,
+                maxWidth: 200,
+                marginRight: 30,
+                marginTop: 10,
+              }}
             />
           )}
         </li>
