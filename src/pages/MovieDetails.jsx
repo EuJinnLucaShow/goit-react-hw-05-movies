@@ -6,12 +6,15 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
 
+  const API_KEY = 'a4e0e6c94492c515df52f4a6ebcc54c7';
+  axios.defaults.baseURL = 'https://api.themoviedb.org/3';
+
   useEffect(() => {
-    // Отримання детальної інформації про фільм з API
+    // Fetch movie details from the API
     const fetchMovieDetails = async () => {
       try {
         const response = await axios.get(
-          `/movies/get-movie-details?movieId=${movieId}`
+          `/movie/${movieId}?api_key=${API_KEY}&language=en-US`
         );
         setMovieDetails(response.data);
       } catch (error) {

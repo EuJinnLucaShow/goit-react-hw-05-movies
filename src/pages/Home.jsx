@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
+
   const API_KEY = 'a4e0e6c94492c515df52f4a6ebcc54c7';
   axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 
@@ -14,6 +15,7 @@ const Home = () => {
         api_key: API_KEY,
       },
     };
+
     const fetchTrendingMovies = async () => {
       try {
         const response = await axios.get(`trending/movie/day`, params);
@@ -32,7 +34,7 @@ const Home = () => {
       <ul>
         {trendingMovies.map(movie => (
           <li key={movie.id}>
-            <Link to="/movies/:movieId">{movie.title}</Link>
+            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
           </li>
         ))}
       </ul>
