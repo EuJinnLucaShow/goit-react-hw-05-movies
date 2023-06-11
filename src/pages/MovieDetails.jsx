@@ -56,6 +56,7 @@ const MovieDetails = () => {
         }
         alt={movieDetails.title}
       />
+      <hr />
       <h3>Additional information</h3>
       <ul>
         <li>
@@ -65,6 +66,7 @@ const MovieDetails = () => {
           <Link to="reviews">Reviews</Link>
         </li>
       </ul>
+      <hr />
       <Outlet />
     </div>
   );
