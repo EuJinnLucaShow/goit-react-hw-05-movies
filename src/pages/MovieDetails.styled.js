@@ -14,8 +14,10 @@ export const ImageContainer = styled.div`
 `;
 
 export const Image = styled.img`
-  /* max-height: 50px;
-  max-width: 200px; */
+  max-height: 500px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
+  align-self: flex-start;
 `;
 
 export const Description = styled.div`
