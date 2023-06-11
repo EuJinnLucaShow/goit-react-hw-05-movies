@@ -11,7 +11,6 @@ const Cast = () => {
 
   useEffect(() => {
     // Отримання інформації про акторський склад фільму з API
-
     const params = {
       params: {
         api_key: API_KEY,

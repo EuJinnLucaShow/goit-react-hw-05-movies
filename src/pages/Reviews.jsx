@@ -11,7 +11,6 @@ const Reviews = () => {
 
   useEffect(() => {
     // Отримання оглядів фільму з API
-
     const params = {
       params: {
         api_key: API_KEY,
