@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import background from '../images/background.jpg';
 
 export const Container = styled.div`
   max-width: 1200px;
@@ -9,7 +10,7 @@ export const Container = styled.div`
 
   &:before {
     content: '';
-    background-image: url('https://images.wallpaperscraft.com/image/single/wall_structure_polygon_866156_3840x2400.jpg');
+    background-image: url(${background});
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -19,8 +20,8 @@ export const Container = styled.div`
     width: 100%;
     height: 100%;
     z-index: -5;
-    opacity: 0.3;
-    filter: blur(5px);
+    opacity: 0.6;
+    filter: blur(1px);
   }
 `;
 

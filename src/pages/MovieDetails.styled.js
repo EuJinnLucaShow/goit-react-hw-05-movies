@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import propTypes from 'prop-types';
+import background from '../images/background.jpg';
 // Створення стилізованих компонентів
 export const Container = styled.div`
   display: flex;
@@ -30,7 +31,7 @@ export const Container = styled.div`
     background-image: ${props =>
       props.backdrop
         ? `url('https://image.tmdb.org/t/p/w500/${props.backdrop}')`
-        : `url('https://images.wallpaperscraft.com/image/single/wall_structure_polygon_866156_3840x2400.jpg')`};
+        : `url(${background})`};
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
