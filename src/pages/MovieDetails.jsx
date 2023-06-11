@@ -49,7 +49,11 @@ const MovieDetails = () => {
         ))}
       </p>
       <img
-        src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+        src={
+          movieDetails.poster_path
+            ? `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`
+            : `https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg`
+        }
         alt={movieDetails.title}
       />
       <h3>Additional information</h3>
