@@ -13,6 +13,7 @@ const Home = () => {
     const params = {
       params: {
         api_key: API_KEY,
+        language: 'en-US',
       },
     };
 
