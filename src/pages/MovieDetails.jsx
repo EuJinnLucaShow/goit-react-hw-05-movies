@@ -60,7 +60,7 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <Container>
+      <Container backdrop={movieDetails.backdrop_path}>
         <Description>
           <h1>{movieDetails.title}</h1>
           <p>User score: {roundedPopularity}%</p>
