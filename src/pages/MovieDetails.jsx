@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useParams, Link, Outlet } from 'react-router-dom';
 import axios from 'axios';
 
 const MovieDetails = () => {
@@ -62,6 +61,7 @@ const MovieDetails = () => {
           <Link to="reviews">Reviews</Link>
         </li>
       </ul>
+      <Outlet />
     </div>
   );
 };
