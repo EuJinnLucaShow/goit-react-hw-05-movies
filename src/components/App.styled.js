@@ -5,6 +5,23 @@ export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
+  height: 100vh;
+
+  &:before {
+    content: '';
+    background-image: url('https://images.wallpaperscraft.com/image/single/wall_structure_polygon_866156_3840x2400.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    opacity: 0.3;
+    filter: blur(5px);
+  }
 `;
 
 export const Header = styled.header`
