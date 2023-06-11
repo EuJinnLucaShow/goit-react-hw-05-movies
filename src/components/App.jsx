@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { lazy } from 'react';
-import { Container, Header, Logo, Link } from './App.styled';
+import { lazy, Suspense } from 'react';
+import { Container, Header, Logo, Links } from './App.styled';
 
 // Import components
 const Home = lazy(() => import('../pages/Home'));
@@ -27,21 +27,23 @@ const App = () => {
           Movie Search
         </Logo>
         <nav>
-          <Link to="/" end>
+          <Links to="/" end>
             Home
-          </Link>
-          <Link to="/movies">Movie</Link>
+          </Links>
+          <Links to="/movies">Movie</Links>
         </nav>
       </Header>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:movieId" element={<MovieDetails />}>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
-        </Route>
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:movieId" element={<MovieDetails />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </Suspense>
     </Container>
   );
 };
