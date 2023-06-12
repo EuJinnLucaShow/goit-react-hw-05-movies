@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { FcSearch } from 'react-icons/fc';
 
-export const Wrapper = styled.form`
+export const Form = styled.form`
   display: flex;
   align-items: center;
   gap: 1.5rem;
