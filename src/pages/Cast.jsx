@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { List, Item } from './Cast.styled';
+import placeholder from '../images/placeholder.png';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -39,10 +40,11 @@ const Cast = () => {
           <Item key={actor.id}>
             <img
               width="200px"
+              height="300px"
               src={
                 actor.profile_path
-                  ? `https://image.tmdb.org/t/p/w500${actor.profile_path}`
-                  : `https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg`
+                  ? `https://image.tmdb.org/t/p/w300${actor.profile_path}`
+                  : `${placeholder}`
               }
               alt={actor.original_name}
             />
