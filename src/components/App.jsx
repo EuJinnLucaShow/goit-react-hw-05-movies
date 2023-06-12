@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 // import { lazy, Suspense } from 'react';
 import { Container, Header, Logo, Links } from './App.styled';
+import AppFooter from '../components/AppFooter/AppFooter';
 
 // Import components
 // const Home = lazy(() => import('../pages/Home'));
@@ -42,6 +43,7 @@ const App = () => {
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+      <AppFooter />
     </Container>
   );
 };
