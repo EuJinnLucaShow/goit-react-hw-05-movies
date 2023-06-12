@@ -17,7 +17,7 @@ const MovieDetails = () => {
   axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 
   useEffect(() => {
-    // Fetch movie details from the API
+    // Отримання деталів фільму з API
     const params = {
       params: {
         api_key: API_KEY,

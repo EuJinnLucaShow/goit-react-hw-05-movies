@@ -35,6 +35,7 @@ const Movies = () => {
         type="text"
         value={searchQuery}
         onChange={e => setSearchQuery(e.target.value)}
+        placeholder="type here"
       />
       <button onClick={handleSearch}>Search</button>
       <ul>
