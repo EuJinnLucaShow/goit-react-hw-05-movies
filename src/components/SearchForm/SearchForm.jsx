@@ -3,8 +3,12 @@ import propTypes from 'prop-types';
 import { Form, Icon } from './SearchForm.styled';
 
 export const SearchForm = ({ value, onChange }) => {
+  const handleSubmit = e => {
+    e.preventDefault();
+  };
+
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <h2>Movie Search</h2>
       <DebounceInput
         type="text"

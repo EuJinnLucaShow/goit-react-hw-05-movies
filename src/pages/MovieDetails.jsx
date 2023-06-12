@@ -8,6 +8,7 @@ import {
   Image,
   ProdCompany,
 } from './MovieDetails.styled';
+import noimage from '../images/noimage.svg';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -90,7 +91,7 @@ const MovieDetails = () => {
             src={
               movieDetails.poster_path
                 ? `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`
-                : `https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg`
+                : `${noimage}`
             }
             alt={movieDetails.title}
           />
