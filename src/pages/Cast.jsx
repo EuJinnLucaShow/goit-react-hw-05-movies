@@ -32,7 +32,7 @@ const Cast = () => {
 
   return (
     <div>
-      <h1>Movie Cast</h1>
+      <h2>Movie Cast</h2>
       <ul>
         {cast.map(actor => (
           <li key={actor.id}>
@@ -45,7 +45,7 @@ const Cast = () => {
               }
               alt={actor.original_name}
             />
-            {actor.name}
+            <p>{actor.name}</p>
           </li>
         ))}
       </ul>

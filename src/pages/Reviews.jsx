@@ -34,7 +34,7 @@ const Reviews = () => {
     <>
       {reviews.length !== 0 && (
         <div>
-          <h1>Movie Reviews</h1>
+          <h2>Movie Reviews</h2>
           <ul>
             {reviews.map(review => (
               <li key={review.id}>

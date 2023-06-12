@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import propTypes from 'prop-types';
-import background from '../images/background.jpg';
+import background from '../images/background.jpeg';
 // Створення стилізованих компонентів
 export const Container = styled.div`
   display: flex;
