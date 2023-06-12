@@ -1,9 +1,10 @@
 import { DebounceInput } from 'react-debounce-input';
 import propTypes from 'prop-types';
+import { Wrapper, Icon } from './SearchForm.styled';
 
 export const SearchForm = ({ value, onChange }) => {
   return (
-    <div>
+    <Wrapper>
       <h2>Movie Search</h2>
       <DebounceInput
         type="text"
@@ -12,7 +13,8 @@ export const SearchForm = ({ value, onChange }) => {
         onChange={e => onChange(e.target.value)}
         placeholder="type here"
       />
-    </div>
+      <Icon />
+    </Wrapper>
   );
 };
 
