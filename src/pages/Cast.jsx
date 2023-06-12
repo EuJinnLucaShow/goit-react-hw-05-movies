@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { List, Item } from './Cast.styled';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -33,9 +34,9 @@ const Cast = () => {
   return (
     <div>
       <h2>Movie Cast</h2>
-      <ul>
+      <List>
         {cast.map(actor => (
-          <li key={actor.id}>
+          <Item key={actor.id}>
             <img
               width="200px"
               src={
@@ -46,9 +47,9 @@ const Cast = () => {
               alt={actor.original_name}
             />
             <p>{actor.name}</p>
-          </li>
+          </Item>
         ))}
-      </ul>
+      </List>
     </div>
   );
 };
