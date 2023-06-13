@@ -13,6 +13,7 @@ export const Form = styled.form`
     padding: 8px 32px 8px 8px;
     width: 250px;
     border-radius: 4px;
+    background-color: transparent;
     border: none;
     border-bottom: 2px solid #2aaaeb;
     outline: none;
