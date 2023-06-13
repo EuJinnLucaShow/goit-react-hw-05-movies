@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import { fetchMovieCast } from '../Api/Api';
 import { List, Item } from './Cast.styled';
 import placeholder from '../images/placeholder.png';
 
@@ -8,28 +8,19 @@ const Cast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
 
-  const API_KEY = 'a4e0e6c94492c515df52f4a6ebcc54c7';
-  axios.defaults.baseURL = 'https://api.themoviedb.org/3';
-
   useEffect(() => {
     // Отримання інформації про акторський склад фільму з API
-    const params = {
-      params: {
-        api_key: API_KEY,
-        language: 'en-US',
-      },
-    };
 
-    const fetchMovieCast = async () => {
+    const movieCast = async () => {
       try {
-        const response = await axios.get(`movie/${movieId}/credits?`, params);
-        setCast(response.data.cast);
+        const response = await fetchMovieCast(movieId);
+        setCast(response);
       } catch (error) {
         console.error(error);
       }
     };
 
-    fetchMovieCast();
+    movieCast();
   }, [movieId]);
 
   return (
