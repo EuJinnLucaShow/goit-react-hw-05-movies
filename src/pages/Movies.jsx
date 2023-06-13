@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { handleSearch } from '../components/Api/Api';
+import { handleSearch } from '../Api/Api';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import MovieList from '../components/MovieList/MovieList';
 
