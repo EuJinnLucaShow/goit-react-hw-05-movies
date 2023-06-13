@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, Outlet } from 'react-router-dom';
-import axios from 'axios';
+import { fetchMovieDetails } from '../components/Api/Api';
 import {
   Container,
   Description,
@@ -14,27 +14,18 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
 
-  const API_KEY = 'a4e0e6c94492c515df52f4a6ebcc54c7';
-  axios.defaults.baseURL = 'https://api.themoviedb.org/3';
-
   useEffect(() => {
     // Отримання деталів фільму з API
-    const params = {
-      params: {
-        api_key: API_KEY,
-        language: 'en-US',
-      },
-    };
-    const fetchMovieDetails = async () => {
+    const movieDetails = async () => {
       try {
-        const response = await axios.get(`/movie/${movieId}`, params);
-        setMovieDetails(response.data);
+        const movie = await fetchMovieDetails(movieId);
+        setMovieDetails(movie);
       } catch (error) {
         console.error(error);
       }
     };
 
-    fetchMovieDetails();
+    movieDetails();
   }, [movieId]);
 
   if (!movieDetails) {
