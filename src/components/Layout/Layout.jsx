@@ -21,11 +21,10 @@ const Layout = () => {
             <Links to="/movies">Movie</Links>
           </nav>
         </Header>
-        <main>
-          <Suspense fallback={<Loader />}>
-            <Outlet />
-          </Suspense>
-        </main>
+
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
         <Footer>
           <Text>&copy; {new Date().getFullYear()} Movie Search</Text>
         </Footer>
