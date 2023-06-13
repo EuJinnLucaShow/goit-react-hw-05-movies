@@ -58,7 +58,7 @@ export const Links = styled(NavLink)`
 `;
 
 export const Footer = styled.footer`
-  border-top: 1px solid #ececec;
+  /* border-top: 1px solid #ececec; */
 `;
 
 export const Text = styled.p`
