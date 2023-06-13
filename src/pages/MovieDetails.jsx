@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, Link, Outlet } from 'react-router-dom';
+import React, { useEffect, useState, useRef } from 'react';
+import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { fetchMovieDetails } from '../components/Api/Api';
 import {
   Container,
@@ -13,6 +13,8 @@ import noimage from '../components/images/noimage.svg';
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
+  const location = useLocation();
+  const backLinkHref = useRef(location.state?.from || '/');
 
   useEffect(() => {
     // Отримання деталів фільму з API
@@ -57,6 +59,9 @@ const MovieDetails = () => {
 
   return (
     <div>
+      <Link to={backLinkHref.current}>
+        <button type="button">Go back</button>
+      </Link>
       <Container backdrop={movieDetails.backdrop_path}>
         <Description>
           <h1>{movieDetails.title}</h1>
