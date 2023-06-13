@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { Loader } from '../Loader/Loader';
 import { Container, Header, Logo, Links, Footer, Text } from './Layout.styled';
 
-export const Layout = () => {
+const Layout = () => {
   return (
     <>
       <Container>
@@ -33,4 +33,4 @@ export const Layout = () => {
   );
 };
 
-// export default Layout;
+export default Layout;
