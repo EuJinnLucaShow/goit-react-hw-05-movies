@@ -9,6 +9,7 @@ import {
   ProdCompany,
 } from './MovieDetails.styled';
 import noimage from '../components/images/noimage.svg';
+import Button from '../components/Button/Button';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -60,7 +61,7 @@ const MovieDetails = () => {
   return (
     <div>
       <Link to={backLinkHref.current}>
-        <button type="button">Go back</button>
+        <Button />
       </Link>
       <Container backdrop={movieDetails.backdrop_path}>
         <Description>
