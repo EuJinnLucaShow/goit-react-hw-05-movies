@@ -8,7 +8,7 @@ import {
   Image,
   ProdCompany,
 } from './MovieDetails.styled';
-import noimage from '../images/noimage.svg';
+import noimage from '../components/images/noimage.svg';
 
 const MovieDetails = () => {
   const { movieId } = useParams();

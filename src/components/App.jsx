@@ -1,8 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { Layout } from './Layout/Layout';
 // import { lazy, Suspense } from 'react';
-import { Container, Header, Logo, Links } from './App.styled';
-import AppFooter from '../components/AppFooter/AppFooter';
 
 // Import components
 // const Home = lazy(() => import('../pages/Home'));
@@ -14,37 +13,22 @@ import AppFooter from '../components/AppFooter/AppFooter';
 import Home from '../pages/Home';
 import Movies from '../pages/Movies';
 import MovieDetails from '../pages/MovieDetails';
-import Cast from '../pages/Cast';
-import Reviews from '../pages/Reviews';
+import Cast from './Cast/Cast';
+import Reviews from './Reviews/Reviews';
 
 const App = () => {
   return (
-    <Container>
-      <Header>
-        <Logo>
-          <span role="img" aria-label="computer icon">
-            🎞️
-          </span>{' '}
-          Movie Search
-        </Logo>
-        <nav>
-          <Links to="/" end>
-            Home
-          </Links>
-          <Links to="/movies">Movie</Links>
-        </nav>
-      </Header>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:movieId" element={<MovieDetails />}>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="movies" element={<Movies />} />
+        <Route path="movies/:movieId" element={<MovieDetails />}>
           <Route path="cast" element={<Cast />} />
           <Route path="reviews" element={<Reviews />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Route>
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-      <AppFooter />
-    </Container>
+      </Route>
+    </Routes>
   );
 };
 
