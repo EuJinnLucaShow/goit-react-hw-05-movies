@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
-import axios from 'axios';
+import { useSearchParams } from 'react-router-dom';
+import { handleSearch } from '../components/Api/Api';
 import { SearchForm } from 'components/SearchForm/SearchForm';
+import MovieList from '../components/MovieList/MovieList';
 
 const Movies = () => {
   const [searchResults, setSearchResults] = useState([]);
@@ -13,41 +14,22 @@ const Movies = () => {
     setSearchParams(nextParams);
   };
 
-  const API_KEY = 'a4e0e6c94492c515df52f4a6ebcc54c7';
-  axios.defaults.baseURL = 'https://api.themoviedb.org/3';
-
   useEffect(() => {
-    const params = {
-      params: {
-        api_key: API_KEY,
-        query: movieName,
-        include_adult: false,
-        language: 'en-US',
-        page: 1,
-      },
-    };
-
-    const handleSearch = async () => {
+    const search = async () => {
       try {
-        const response = await axios.get(`/search/movie`, params);
-        setSearchResults(response.data.results);
+        const movies = await handleSearch(movieName);
+        setSearchResults(movies);
       } catch (error) {
         console.error(error);
       }
     };
-    handleSearch();
+    search();
   }, [movieName]);
 
   return (
     <div>
       <SearchForm value={movieName} onChange={updateQueryString} />
-      <ul>
-        {searchResults.map(movie => (
-          <li key={movie.id}>
-            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
-          </li>
-        ))}
-      </ul>
+      <MovieList films={searchResults} />
     </div>
   );
 };
