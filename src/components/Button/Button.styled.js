@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Btn = styled.button`
   padding: 8px 16px;
-  margin-bottom: 16px;
+  margin: 0 16px 16px 0;
   border: none;
   border-radius: 4px;
   text-decoration: none;

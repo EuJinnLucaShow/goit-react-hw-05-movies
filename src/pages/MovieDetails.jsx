@@ -61,7 +61,7 @@ const MovieDetails = () => {
   return (
     <div>
       <Link to={backLinkHref.current}>
-        <Button />
+        <Button text="⬅️ Go back" />
       </Link>
       <Container backdrop={movieDetails.backdrop_path}>
         <Description>
@@ -96,14 +96,12 @@ const MovieDetails = () => {
       </Container>
       <hr />
       <h3>Additional information</h3>
-      <ul>
-        <li>
-          <Link to="cast">Cast</Link>
-        </li>
-        <li>
-          <Link to="reviews">Reviews</Link>
-        </li>
-      </ul>
+      <Link to="cast">
+        <Button text="Cast" />
+      </Link>
+      <Link to="reviews">
+        <Button text="Reviews" />
+      </Link>
       <hr />
       <Outlet />
     </div>

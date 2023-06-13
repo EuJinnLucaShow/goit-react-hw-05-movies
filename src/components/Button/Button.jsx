@@ -1,6 +1,11 @@
 import { Btn } from './Button.styled';
+import PropTypes from 'prop-types';
 
-const Button = () => {
-  return <Btn type="button">⬅️ Go back</Btn>;
+const Button = ({ text }) => {
+  return <Btn type="button">{text}</Btn>;
 };
 export default Button;
+
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+};
