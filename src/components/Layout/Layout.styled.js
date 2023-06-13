@@ -10,7 +10,12 @@ export const Container = styled.div`
 
   &:before {
     content: '';
-    background-image: url(${background});
+    background-image: linear-gradient(
+        rgba(106, 191, 235, 0),
+        rgba(106, 191, 235, 1)
+      ),
+      url(${background});
+    background-blend-mode: multiply;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
