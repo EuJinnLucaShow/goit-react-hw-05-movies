@@ -1,8 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
-import { lazy, Suspense } from 'react';
-import { Loader } from '../components/Loader/Loader';
+import { lazy } from 'react';
 
 // Import components
 const Home = lazy(() => import('../pages/Home'));
@@ -13,19 +12,17 @@ const Reviews = lazy(() => import('./Reviews/Reviews'));
 
 const App = () => {
   return (
-    <Suspense fallback={<Loader />}>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="movies" element={<Movies />} />
-          <Route path="movies/:movieId" element={<MovieDetails />}>
-            <Route path="cast" element={<Cast />} />
-            <Route path="reviews" element={<Reviews />} />
-          </Route>
-          <Route path="*" element={<Navigate to="/" />} />
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="movies" element={<Movies />} />
+        <Route path="movies/:movieId" element={<MovieDetails />}>
+          <Route path="cast" element={<Cast />} />
+          <Route path="reviews" element={<Reviews />} />
         </Route>
-      </Routes>
-    </Suspense>
+        <Route path="*" element={<Navigate to="/" />} />
+      </Route>
+    </Routes>
   );
 };
 
