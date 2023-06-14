@@ -1,5 +1,6 @@
 import { DebounceInput } from 'react-debounce-input';
 import propTypes from 'prop-types';
+
 import { Form, Icon } from './SearchForm.styled';
 
 export const SearchForm = ({ value, onChange }) => {

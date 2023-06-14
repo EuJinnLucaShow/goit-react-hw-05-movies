@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+
 import { fetchMovieCast } from 'service/Api';
 import { List, Item } from './Cast.styled';
 import placeholder from '../images/placeholder.png';

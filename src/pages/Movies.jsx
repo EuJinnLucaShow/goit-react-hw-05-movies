@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+
 import { handleSearch } from 'service/Api';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import MovieList from 'components/MovieList/MovieList';
@@ -10,7 +11,7 @@ const Movies = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const movieName = searchParams.get('query') || '';
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const updateQueryString = query => {
     const nextParams = query !== '' && { query };
