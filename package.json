@@ -13,6 +13,7 @@
     "react-dom": "^18.1.0",
     "react-icons": "^4.9.0",
     "react-loader-spinner": "^5.3.4",
+    "react-loading-skeleton": "^3.3.1",
     "react-router-dom": "^6.12.1",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.11",

@@ -10,6 +10,7 @@ import {
 } from './MovieDetails.styled';
 import noimage from 'components/images/noimage.svg';
 import Button from 'components/Button/Button';
+import { Loader } from 'components/Loader/Loader';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -32,7 +33,7 @@ const MovieDetails = () => {
   }, [movieId]);
 
   if (!movieDetails) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   const productionCompaniesList = movieDetails.production_companies?.map(
