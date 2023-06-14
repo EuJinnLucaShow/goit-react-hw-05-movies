@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import propTypes from 'prop-types';
+
 import background from '../components/images/background.jpeg';
-// Створення стилізованих компонентів
+
 export const Container = styled.div`
   display: flex;
   flex-direction: row-reverse;

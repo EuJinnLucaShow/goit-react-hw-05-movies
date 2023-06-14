@@ -2,7 +2,15 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { Loader } from '../Loader/Loader';
-import { Container, Header, Logo, Links, Footer, Text } from './Layout.styled';
+import {
+  Container,
+  Header,
+  Logo,
+  Links,
+  Footer,
+  Text,
+  IconLogo,
+} from './Layout.styled';
 
 const Layout = () => {
   return (
@@ -10,9 +18,7 @@ const Layout = () => {
       <Container>
         <Header>
           <Logo>
-            <span role="img" aria-label="computer icon">
-              🎞️
-            </span>
+            <IconLogo />
             Movie Search
           </Logo>
           <nav>
