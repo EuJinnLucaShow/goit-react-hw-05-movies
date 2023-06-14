@@ -42,7 +42,7 @@ const Movies = () => {
             style={{ height: 30, width: 300, marginTop: 15 }}
           />
         ) : searchResults.length === 0 && movieName ? (
-          <h2>No results found</h2>
+          <h2>🔎 Nothing found</h2>
         ) : (
           <MovieList films={searchResults} />
         )}
