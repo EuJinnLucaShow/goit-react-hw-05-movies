@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
+import { SiThemoviedatabase } from 'react-icons/si';
+
 import placeholder from '../images/placeholder.png';
 
 export const List = styled.ul`
@@ -19,6 +21,11 @@ export const LinkDetails = styled(Link)`
   color: #000;
   text-decoration: none;
   margin: 1px;
+
+  &:hover,
+  &:focus {
+    color: #2aaaeb;
+  }
 
   @media screen and (min-width: 768px) {
     &:hover::after,
@@ -42,6 +49,16 @@ export const LinkDetails = styled(Link)`
       z-index: 1;
     }
   }
+`;
+
+export const LogoIcon = styled(SiThemoviedatabase)`
+  width: 20px;
+  height: 20px;
+  position: relative;
+  right: 6px;
+  top: 5px;
+  z-index: 1;
+  opacity: 0.7;
 `;
 
 LinkDetails.propTypes = {

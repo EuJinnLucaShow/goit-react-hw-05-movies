@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { List, Item, LinkDetails } from './MoviesList.styled';
+import { List, Item, LinkDetails, LogoIcon } from './MoviesList.styled';
 
 const MovieList = ({ films }) => {
   const location = useLocation();
@@ -15,7 +15,7 @@ const MovieList = ({ films }) => {
             state={{ from: location }}
             cover={movie.poster_path}
           >
-            🎞️ {movie.title}
+            <LogoIcon /> {movie.title}
           </LinkDetails>
         </Item>
       ))}
