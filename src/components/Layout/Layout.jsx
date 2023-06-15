@@ -19,7 +19,7 @@ const Layout = () => {
         <Header>
           <Logo>
             <IconLogo />
-            Movie Search
+            TMDB
           </Logo>
           <nav>
             <Links to="/" end>

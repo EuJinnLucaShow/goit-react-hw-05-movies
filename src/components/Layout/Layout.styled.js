@@ -48,6 +48,8 @@ export const Header = styled.header`
 
 export const Logo = styled.p`
   font-weight: 700;
+  font-size: 30px;
+  color: #064e8a;
   margin: 0;
   margin-left: 10px;
 `;
@@ -61,7 +63,7 @@ export const Links = styled(NavLink)`
 
   &.active {
     color: white;
-    background-color: #2aaaeb;
+    background-color: #064e8a;
   }
 `;
 
@@ -76,8 +78,8 @@ export const Text = styled.p`
 `;
 
 export const IconLogo = styled(SiThemoviedatabase)`
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   position: relative;
   right: 6px;
   top: 5px;

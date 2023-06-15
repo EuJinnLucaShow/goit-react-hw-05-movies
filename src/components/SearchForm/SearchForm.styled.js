@@ -14,7 +14,7 @@ export const Form = styled.form`
     width: 250px;
     background-color: transparent;
     border: none;
-    border-bottom: 2px solid #2aaaeb;
+    border-bottom: 2px solid #064e8a;
     outline: none;
   }
 `;

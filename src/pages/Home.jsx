@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Trending Movies</h1>
+      <h2>Trending Movies</h2>
       <SkeletonTheme baseColor="#dddddd" highlightColor="#a5a5a5">
         {trendingMovies.length === 0 ? (
           <Skeleton

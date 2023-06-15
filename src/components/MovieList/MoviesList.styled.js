@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
-import { SiThemoviedatabase } from 'react-icons/si';
+import { FaFilm } from 'react-icons/fa';
 
 import placeholder from '../images/placeholder.png';
 
@@ -24,7 +24,7 @@ export const LinkDetails = styled(Link)`
 
   &:hover,
   &:focus {
-    color: #2aaaeb;
+    color: #064e8a;
   }
 
   @media screen and (min-width: 768px) {
@@ -51,7 +51,7 @@ export const LinkDetails = styled(Link)`
   }
 `;
 
-export const LogoIcon = styled(SiThemoviedatabase)`
+export const LogoIcon = styled(FaFilm)`
   width: 20px;
   height: 20px;
   position: relative;
